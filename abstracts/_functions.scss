@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// 이 파일에는 어플리케이션 전체의 Sass 함수가 모두 포함되어 있습니다
+// -----------------------------------------------------------------------------
+
+/// 기본 `url(..)` 함수
+/// @param {String} $base - base URL for the asset
+/// @param {String} $type - asset type folder (e.g. `fonts/`)
+/// @param {String} $path - asset path
+/// @return {Url}
+@function asset($base, $type, $path) {
+  @return url($base + $type + $path);
+}
+
+/// 경로를 기반으로 이미지에 대한 URL 반환
+/// @param {String} $path - image path
+/// @param {String} $base [$base-url] - base URL
+/// @return {Url}
+/// @require $base-url
+@function image($path, $base: $base-url) {
+  @return asset($base, 'images/', $path);
+}
+
+/// 경로를 기반으로 글꼴 대한 URL 반환
+/// @param {String} $path - font path
+/// @param {String} $base [$base-url] - base URL
+/// @return {Url}
+/// @require $base-url
+@function font($path, $base: $base-url) {
+  @return asset($base, 'fonts/', $path);
+}

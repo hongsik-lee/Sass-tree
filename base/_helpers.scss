@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * clearfix
+ */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+/**
+ * Main content containers
+
+ * 1. 컨테이너를 최대 너비로 전체 너비를 설정한다
+ * 2. viewport 중앙에 배치한다 
+ * 3. 작은 화면일때 가장자리에 공간을 남겨둔다
+ */
+.container {
+  max-width: $max-width; /* 1 */
+  margin-left: auto; /* 2 */
+  margin-right: auto; /* 2 */
+  padding-left: 20px; /* 3 */
+  padding-right: 20px; /* 3 */
+  width: 100%; /* 1 */
+}
+
+/**
+ * 보조기기가 읽을 수 있는 글을 숨겨둔다 
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * 보조기기가 읽을 수 있는 글을 숨겨둔다 
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
